@@ -552,7 +552,7 @@ public class TouchDrawActivity extends Activity {
         }
 
         String base64 = base64DataUrl.split("base64,")[1];
-        byte[] imgData = Base64.decode(base64, Base64.DEFAULT);
+        byte[] imgData = Base64.decode(base64, Base64.URL_SAFE);
 
         BitmapFactory.Options opts = new BitmapFactory.Options();
         opts.inMutable = true;
