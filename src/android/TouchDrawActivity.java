@@ -72,6 +72,11 @@ public class TouchDrawActivity extends Activity {
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle oldInstanceState) {
+    super.onSaveInstanceState(oldInstanceState);
+    oldInstanceState.clear();
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle intentExtras = getIntent().getExtras();
