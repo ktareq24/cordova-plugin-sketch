@@ -72,11 +72,6 @@ public class TouchDrawActivity extends Activity {
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle oldInstanceState) {
-    super.onSaveInstanceState(oldInstanceState);
-    oldInstanceState.clear();
-    }
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle intentExtras = getIntent().getExtras();
@@ -552,7 +547,7 @@ public class TouchDrawActivity extends Activity {
         }
 
         String base64 = base64DataUrl.split("base64,")[1];
-        byte[] imgData = Base64.decode(base64, Base64.URL_SAFE);
+        byte[] imgData = Base64.decode(base64, Base64.DEFAULT);
 
         BitmapFactory.Options opts = new BitmapFactory.Options();
         opts.inMutable = true;
